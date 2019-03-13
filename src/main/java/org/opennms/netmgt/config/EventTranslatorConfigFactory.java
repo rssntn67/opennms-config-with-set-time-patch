@@ -506,7 +506,7 @@ public final class EventTranslatorConfigFactory implements EventTranslatorConfig
         protected void setValue(Event targetEvent, String value) {
             try {
                 BeanWrapper bean = PropertyAccessorFactory.forBeanPropertyAccess(targetEvent);
-                bean.registerCustomEditor(Date.class, new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss"), false));
+                bean.registerCustomEditor(Date.class, new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"), false));
                 bean.setPropertyValue(getAttributeName(), value);
             } catch(FatalBeanException e) {
                 LOG.error("Unable to set value for attribute {}to value {} Exception: {}", e, getAttributeName(), value);
