@@ -91,10 +91,10 @@ public class EventTranslatorConfigFactoryTest {
         Event copy = EventTranslatorConfigFactory.cloneEvent(event);
         assertNull(copy.getTime());
         BeanWrapper bean = PropertyAccessorFactory.forBeanPropertyAccess(copy);
-        bean.registerCustomEditor(Date.class, new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss"), false));
-        bean.setPropertyValue("time", "2019-03-01 10:03:37");
+        bean.registerCustomEditor(Date.class, new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"), false));
+        bean.setPropertyValue("time", "2019-03-01 12:01:46");
         
-        System.out.println(copy.getTime());
+        System.err.println(copy.getTime());
 
     }
 
